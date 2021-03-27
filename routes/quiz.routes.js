@@ -1,6 +1,6 @@
 module.exports = app => {
     const Quizs = require("../controllers/quiz.controller.js");
-    const QuizAnswers = require("../controllers/quizAnswer.controller.js");
+    //const QuizAnswers = require("../controllers/quizAnswer.controller.js");
   
     var router = require("express").Router();
   
@@ -11,7 +11,7 @@ module.exports = app => {
     router.post("quiz/:id", Quizs.createQuizWithSubmissionAnswers);
   
     // Gets all Quizzes
-    router.get("/quizzes", Quizs.findAll);
+    router.get("/all", Quizs.findAll);
   
     // Get a Single Quiz by ID
     router.get("/:id", Quizs.findOne);

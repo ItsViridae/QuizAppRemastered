@@ -51,6 +51,11 @@ db.mongoose.connect(db.url, {
     useUnifiedTopology: true
 }).then(()=>{
     console.log("Connected to Database");
+
+    //const ExpApp = express()
+    //require("./routes/quiz.routes")(app);
+    //ExpApp.use("./routes/quiz.routes", routes);
+
 }).catch(err => {
     console.log("Cannot connect to the database!", err);
     process.exit();
