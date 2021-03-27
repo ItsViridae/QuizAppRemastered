@@ -2,6 +2,18 @@ const db = require("../models");
 const Quiz = db.quiz;
 
 // Create  POST - /new/
+/* Example test Create Quiz "body"->
+{
+    "title": "Creating a Title for Test case",
+    "description": "test creation, endpoint",
+    "TrueFalse_Question1": "false",
+    "TrueFalse_Question2": "true",
+    "TrueFalse_Question3": "false",
+    "MultipleChoice_Question1": "B",
+    "MultipleChoice_Multi_Question1": {"A1": "selected", "A2": "selected", "A3": "not Selected", "A4": " not selected"},
+    "ShortAnswer": "This is a short Answer box, testing if this works"
+} 
+*/
 exports.createQuizQuestions = (req, res) => {
 
     // Create Quiz
