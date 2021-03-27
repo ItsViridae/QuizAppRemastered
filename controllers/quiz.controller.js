@@ -1,7 +1,7 @@
 const db = require("../models");
 const Quiz = db.quiz;
 
-// Create  POST - /api/new/
+// Create  POST - /new/
 exports.createQuizQuestions = (req, res) => {
 
     // Create Quiz
@@ -30,7 +30,7 @@ exports.createQuizQuestions = (req, res) => {
 };
 
 // Endpoint to submit a single quiz result Must give ID
-// POST - /api/quiz/id
+// POST - /quiz/id
 exports.createQuizWithSubmissionAnswers = (req, res) => {
     const id = req.params.id;
 
@@ -59,7 +59,7 @@ exports.createQuizWithSubmissionAnswers = (req, res) => {
     });
 }
 
-// GET - /api/quizzes/
+// GET - /quizzes/all
 exports.findAll = (req, res) => {
   //accepts empty string and will get any title that is a string... ):
     const title = req.query.title;
@@ -78,7 +78,7 @@ exports.findAll = (req, res) => {
       });
 };
 
-// GET - /api/quiz/id
+// GET - /quiz/id
 exports.findOne = (req, res) => {
    const id = req.params.id;
 

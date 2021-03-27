@@ -5,19 +5,24 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new Quiz
-    router.post("/new", Quizs.createQuizQuestions);
+    // test -> http://localhost:3000/new/
+    router.post("/new/", Quizs.createQuizQuestions);
 
     // Submit a Single quiz Result
-    router.post("quiz/:id", Quizs.createQuizWithSubmissionAnswers);
+    // test -> http://localhost:3000/quiz/3  -- Generates a new ID for New Quiz in Mongo.
+    router.post("/quiz/:id", Quizs.createQuizWithSubmissionAnswers);
   
     // Gets all Quizzes
-    router.get("/all", Quizs.findAll);
+    // test -> http://localhost:3000/quizzes/
+    router.get("/quizzes/", Quizs.findAll);
   
     // Get a Single Quiz by ID
-    router.get("/:id", Quizs.findOne);
+    // test -> http://localhost:3000/quiz/605f8001a1cbb24f10777014
+    router.get("/quiz/:id", Quizs.findOne);
 
-    // Get a Single Quiz by ID
-    router.get("/title", Quizs.findAllQuizesByTitle);
+    // Get a Single Quiz by Title
+    // test -> http://localhost:3000/title/?title=Testing27date
+    router.get("/title/", Quizs.findAllQuizesByTitle);
   
     // Update a Quiz with id
     //router.put("/:id", Quizs.update);
@@ -28,5 +33,5 @@ module.exports = app => {
     // Delete All Quizes
     //router.delete("/", Quizs.deleteAll);
   
-    app.use('/api/quizzes', router);
+    app.use('/', router);
   };
