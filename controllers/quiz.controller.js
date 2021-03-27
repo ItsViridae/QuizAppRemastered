@@ -61,7 +61,11 @@ exports.createQuizWithSubmissionAnswers = (req, res) => {
 
 // GET - /api/quizzes/
 exports.findAll = (req, res) => {
-    Quiz.findAll()
+  //accepts empty string and will get any title that is a string... ):
+    const title = req.query.title;
+    var condition = title;
+
+    Quiz.find(condition)
       .then(data => {
         console.log(data);
         res.send(data);

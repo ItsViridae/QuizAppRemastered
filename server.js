@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const routes = require("./routes/quiz.routes")
 
 const app = express();
 
@@ -51,10 +52,8 @@ db.mongoose.connect(db.url, {
     useUnifiedTopology: true
 }).then(()=>{
     console.log("Connected to Database");
-
-    //const ExpApp = express()
-    //require("./routes/quiz.routes")(app);
-    //ExpApp.use("./routes/quiz.routes", routes);
+    const ExApp = express();
+    require("./routes/quiz.routes")(ExApp);
 
 }).catch(err => {
     console.log("Cannot connect to the database!", err);
