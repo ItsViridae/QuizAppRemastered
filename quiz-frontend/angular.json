@@ -68,7 +68,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "quiz-frontend:build:production"
+              "browserTarget": "quiz-frontend:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
