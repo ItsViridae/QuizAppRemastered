@@ -8,21 +8,23 @@ import { Quiz } from './quiz'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public localResponse;
+  public localAllQuizzes;
   public quizResponse;
+  public localMulti_Choice_Answers;
   constructor(private http: HttpClient) {    
     //Rest API Call
     // Observable = this.http.get('http://MyRestApi.com/MyRestEndpoint');
-    this.http.get<Quiz>('http://localhost:3000/quizzes').subscribe(
-      apiResponse => {
-        this.localResponse = apiResponse;
-      });
+    // this.http.get<Quiz>('http://localhost:3000/quizzes').subscribe(
+    //   apiResponse => {
+    //     this.localResponse = apiResponse;
+    //   });
 
       this.http.get<Quiz>('http://localhost:3000/quizzes', { observe:'response'}).subscribe( 
         res => { 
           console.log(res);          
           let response = res.body;  
-          this.quizResponse = response;
+          this.localAllQuizzes = response;
+          this.localMulti_Choice_Answers = response.MultipleChoice_Multi_Question1;
     });
 
   }

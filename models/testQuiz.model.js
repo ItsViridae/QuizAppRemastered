@@ -28,15 +28,5 @@ module.exports = mongoose => {
         { timestamps: true }
       )
     );
-    
-    
-     //If front end needs ID's
-      // schema.method("toJSON", function() {
-      //   const { __v, _id, ...object } = this.toObject();
-      //   object.id = _id;
-      //   return object;
-      // });
-      //const Quiz = mongoose.model("quiz", schema);
-  
     return Quiz;
 };
