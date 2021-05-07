@@ -19,7 +19,7 @@ export class AppComponent {
     //     this.localResponse = apiResponse;
     //   });
 
-      this.http.get<Quiz>('http://localhost:3000/quizzes', { observe:'response'}).subscribe( 
+      this.http.get<Quiz>('https://quiz-app-415.herokuapp.com/quizzes', { observe:'response'}).subscribe( 
         res => { 
           console.log(res);          
           let response = res.body;  
